@@ -64,27 +64,13 @@ def Add():
 
     create_one_item_in_json(
             {"id": json.dumps(id), "name": json.dumps(name),
-             "startdate": json.dumps(startdate), "nooftravellers": json.dumps(nooftravellers), "nooftriplegs": json.dumps(nooftriplegs)
-             , "contact": json.dumps(contact), "tripcordinator": json.dumps(tripcordinator), "noofstaffs": json.dumps(noofstaffs), "tripmode": json.dumps(tripmode)
-                , "total": json.dumps(total)
-                , "noofinstallment": json.dumps(noofinstallment), "perinstallmeht": json.dumps(perinstallmeht),
-             "paid": json.dumps(paid), "payable": json.dumps(payable)
-             })
+             "startdate": json.dumps(startdate), "nooftravellers": json.dumps(nooftravellers), "nooftriplegs": json.dumps(nooftriplegs)             })
     messagebox.showinfo("information", "Trip details saved successfully...")
     e1.delete(0, END)
     e2.delete(0, END)
     e3.delete(0, END)
     e4.delete(0, END)
     e5.delete(0, END)
-    e6.delete(0, END)
-    e7.delete(0, END)
-    e8.delete(0, END)
-    e9.delete(0, END)
-    e10.delete(0, END)
-    e11.delete(0, END)
-    e12.delete(0, END)
-    e13.delete(0, END)
-    e14.delete(0, END)
     e1.focus_set()
 
 
@@ -94,42 +80,17 @@ def update():
     startdate = e3.get()
     nooftravellers = e4.get()
     nooftriplegs = e5.get()
-    contact = e6.get()
-    tripcordinator = e7.get()
-    noofstaffs = e8.get()
-    tripmode = e9.get()
-    total = e10.get()
-    noofinstallment = e11.get()
-    perinstallmeht = e12.get()
-    paid = e13.get()
-    payable = e14.get()
 
     update_one_item_in_json(0,
                             {"id": json.dumps(id), "name": json.dumps(name),
                              "startdate": json.dumps(startdate), "nooftravellers": json.dumps(nooftravellers),
-                             "nooftriplegs": json.dumps(nooftriplegs)
-                                , "contact": json.dumps(contact), "tripcordinator": json.dumps(tripcordinator),
-                             "noofstaffs": json.dumps(noofstaffs), "tripmode": json.dumps(tripmode)
-                                , "total": json.dumps(total)
-                                , "noofinstallment": json.dumps(noofinstallment),
-                             "perinstallmeht": json.dumps(perinstallmeht),
-                             "paid": json.dumps(paid), "payable": json.dumps(payable)
-                             })
+                             "nooftriplegs": json.dumps(nooftriplegs)})
     messagebox.showinfo("information", "Trip details Updated successfully...")
     e1.delete(0, END)
     e2.delete(0, END)
     e3.delete(0, END)
     e4.delete(0, END)
     e5.delete(0, END)
-    e6.delete(0, END)
-    e7.delete(0, END)
-    e8.delete(0, END)
-    e9.delete(0, END)
-    e10.delete(0, END)
-    e11.delete(0, END)
-    e12.delete(0, END)
-    e13.delete(0, END)
-    e14.delete(0, END)
     e1.focus_set()
 
 def delete():
@@ -142,15 +103,6 @@ def delete():
     e3.delete(0, END)
     e4.delete(0, END)
     e5.delete(0, END)
-    e6.delete(0, END)
-    e7.delete(0, END)
-    e8.delete(0, END)
-    e9.delete(0, END)
-    e10.delete(0, END)
-    e11.delete(0, END)
-    e12.delete(0, END)
-    e13.delete(0, END)
-    e14.delete(0, END)
     e1.focus_set()
 
 def show():
@@ -159,11 +111,12 @@ def show():
         print(records)
 
         for x in records:
-            listBox.insert("", "end", values=(x['id'], x['name'], x['startdate'], x['nooftravellers'], x['nooftriplegs'], x['contact'], x['tripcordinator'], x['noofstaffs'],x['tripmode'], x['total'], x['noofinstallment'], x['perinstallmeht'], x['paid'],x['payable']))
+            listBox.insert("", "end", values=(x['id'], x['name'], x['startdate'], x['nooftravellers'], x['nooftriplegs']))
 
 window=Tk()
 window.title("Calculator")
-window.geometry('800x600')
+window.geometry("1010x690")
+window.configure(background='#fbe47c')
 
 
 label1 = Label(window, text="Welcome to", fg="#2c5c2b",bg="#fbe47c",  font=(None, 24))
@@ -226,17 +179,15 @@ button2.grid(row=6, column=2, sticky=W)
 
 
 
-window = Tk()
-window.geometry("1010x690")
-window.configure(background='#fbe47c')
+
 global e1
 global e2
 global e3
 global e4
 global e5
 
-cols = ('ID', 'Name', 'Start Date','No of Travellers','No of Trip Legs', 'Contact', 'Trip Cordinator','No of Support Staffs','Trip Mode')
-listBox = ttk.Treeview(root, columns=cols, show='headings')
+cols = ('ID', 'Name', 'Start Date','No of Travellers','No of Trip Legs')
+listBox = ttk.Treeview(window, columns=cols, show='headings')
 
 for col in cols:
     listBox.heading(col, text=col)
