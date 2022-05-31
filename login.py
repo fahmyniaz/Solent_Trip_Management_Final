@@ -7,7 +7,7 @@ from tkinter import messagebox
 def command1(event):
 
         if entry1.get() == 'admin' and entry2.get() == 'password':
-            messagebox.showinfo('login', 'Login SUccess')
+            messagebox.showinfo('login', 'Login Success')
 
 
         root.deiconify()

@@ -4,15 +4,14 @@ from functools import partial
 import random
 
 import login
-import test
 import traveller as traveller
 import trip as trip
+import billing
 import tripCordinator as cordinator
 import tripLeg as leg
 
 def loginMenu():
     login.show()
-
 
 
 def travellerMenu():
@@ -23,7 +22,8 @@ def tripMenu():
     trip.show()
 
 
-
+def billingMenu():
+    billing.show()
 
 def triplegMenu():
     leg.show()

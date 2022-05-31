@@ -73,7 +73,7 @@ def Add():
             {"id": json.dumps(id), "name": json.dumps(name),
              "address": json.dumps(address), "dob": json.dumps(dob), "email": json.dumps(email), "passportno": json.dumps(passportno),
              "nic": json.dumps(nic), "contact": json.dumps(contact)})
-    messagebox.showinfo("information", "traveller inserted successfully...")
+    messagebox.showinfo("information", "Travellers details Saved Successfully...")
     e1.delete(0, END)
     e2.delete(0, END)
     e3.delete(0, END)
@@ -100,7 +100,7 @@ def update():
              "address": json.dumps(address), "dob": json.dumps(dob), "email": json.dumps(email), "passportno": json.dumps(passportno),
              "nic": json.dumps(nic), "contact": json.dumps(contact)})
 
-    messagebox.showinfo("information", "Record Updated successfully...")
+    messagebox.showinfo("information", "Travellers details Updated Successfully...")
     e1.delete(0, END)
     e2.delete(0, END)
     e3.delete(0, END)
@@ -114,7 +114,7 @@ def update():
 def delete():
     empId = e1.get()
     delete_one_item_from_json(0)
-    messagebox.showinfo("information", "Record Deleted successfully...")
+    messagebox.showinfo("information", "Travellers details Deleted successfully...")
 
     e1.delete(0, END)
     e2.delete(0, END)
