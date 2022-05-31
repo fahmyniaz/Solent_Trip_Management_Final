@@ -58,24 +58,25 @@ def GetValue(event):
     e6.insert(0, select['contact'])
     e7.insert(0, select['tripcordinator'])
     e8.insert(0, select['noofstaffs'])
-    e8.insert(0, select['tripmode'])
+    e9.insert(0, select['tripmode'])
+
 
 def Add():
     id = e1.get()
     name = e2.get()
     startdate = e3.get()
     nooftravellers = e4.get()
-    nooftriplegs = e1.get()
-    contact = e2.get()
-    tripcordinator = e3.get()
-    noofstaffs = e4.get()
-    tripmode = e4.get()
+    nooftriplegs = e5.get()
+    contact = e6.get()
+    tripcordinator = e7.get()
+    noofstaffs = e8.get()
+    tripmode = e9.get()
 
     create_one_item_in_json(
             {"id": json.dumps(id), "name": json.dumps(name),
-             "startdate": json.dumps(startdate), "nooftravellers": json.dumps(nooftravellers), "nooftriplegs": json.dumps(nooftriplegs)
-             , "contact": json.dumps(contact), "tripcordinator": json.dumps(tripcordinator), "noofstaffs": json.dumps(noofstaffs), "tripmode": json.dumps(tripmode)})
-    messagebox.showinfo("information", "Trip details saved successfully...")
+             "startdate": json.dumps(startdate), "nooftravellers": json.dumps(nooftravellers), "nooftriplegs": json.dumps(nooftriplegs), "contact": json.dumps(contact),
+             "tripcordinator": json.dumps(tripcordinator), "noofstaffs": json.dumps(noofstaffs), "tripmode": json.dumps(tripmode)})
+    messagebox.showinfo("information", "Trip details Saved Successfully...")
     e1.delete(0, END)
     e2.delete(0, END)
     e3.delete(0, END)
@@ -93,20 +94,20 @@ def update():
     name = e2.get()
     startdate = e3.get()
     nooftravellers = e4.get()
-    nooftriplegs = e1.get()
-    contact = e2.get()
-    tripcordinator = e3.get()
-    noofstaffs = e4.get()
-    tripmode = e4.get()
+    nooftriplegs = e5.get()
+    contact = e6.get()
+    tripcordinator = e7.get()
+    noofstaffs = e8.get()
+    tripmode = e9.get()
 
     update_one_item_in_json(0,
                             {"id": json.dumps(id), "name": json.dumps(name),
                              "startdate": json.dumps(startdate), "nooftravellers": json.dumps(nooftravellers),
-                             "nooftriplegs": json.dumps(nooftriplegs)
-                                , "contact": json.dumps(contact), "tripcordinator": json.dumps(tripcordinator),
-                             "noofstaffs": json.dumps(noofstaffs), "tripmode": json.dumps(tripmode)})
+                             "nooftriplegs": json.dumps(nooftriplegs), "contact": json.dumps(contact),
+                             "tripcordinator": json.dumps(tripcordinator), "noofstaffs": json.dumps(noofstaffs),
+                             "tripmode": json.dumps(tripmode)})
 
-    messagebox.showinfo("information", "Trip details Updated successfully...")
+    messagebox.showinfo("information", "Travellers details Updated Successfully...")
     e1.delete(0, END)
     e2.delete(0, END)
     e3.delete(0, END)
@@ -121,7 +122,7 @@ def update():
 def delete():
     empId = e1.get()
     delete_one_item_from_json(0)
-    messagebox.showinfo("information", "Trip Details Deleted successfully...")
+    messagebox.showinfo("information", "Trip details Deleted successfully...")
 
     e1.delete(0, END)
     e2.delete(0, END)
@@ -140,11 +141,11 @@ def show():
         print(records)
 
         for x in records:
-            listBox.insert("", "end", values=(x['id'], x['name'], x['startdate'], x['nooftravellers'], x['nooftriplegs'], x['contact'], x['tripcordinator'], x['noofstaffs'],x['tripmode']))
+            listBox.insert("", "end", values=(x['id'],x['name'], x['startdate'],x['nooftravellers'],x['nooftriplegs'],x['contact'], x['tripcordinator'],x['noofstaffs'],x['tripmode']))
 
 
 root = Tk()
-root.geometry("1010x690")
+root.geometry("820x860")
 root.configure(background='#fbe47c')
 global e1
 global e2
@@ -155,7 +156,6 @@ global e6
 global e7
 global e8
 global e9
-
 
 tk.Label(root, text="Welcome to", fg="#2c5c2b",bg="#fbe47c",  font=(None, 24)).place(x=370, y=15)
 tk.Label(root, text="Trip Management", fg="#2c5c2b",bg="#fbe47c",  font=(None, 30)).place(x=300, y=55)
@@ -169,7 +169,6 @@ Label(root, text="Contact",bg="#fbe47c",  font=(None, 10, 'bold')).place(x=270, 
 Label(root, text="Trip Cordinator",bg="#fbe47c",  font=(None, 10, 'bold')).place(x=270, y=290)
 Label(root, text="No of Support Staffs",bg="#fbe47c",  font=(None, 10, 'bold')).place(x=270, y=320)
 Label(root, text="Trip Mode",bg="#fbe47c",  font=(None, 10, 'bold')).place(x=270, y=350)
-
 Label(root, text="Please close this window to open the next window, Thank you...",fg="red",bg="#fbe47c",  font=(None, 10, 'bold')).place(x=240, y=660)
 
 e1 = Entry(root, width=30)
@@ -199,17 +198,18 @@ e8.place(x=435, y=320)
 e9 = Entry(root, width=30)
 e9.place(x=435, y=350)
 
+
 Button(root, text="Add",command = Add,height=2, width= 13,fg="green",font=(None, 10, 'bold')).place(x=250, y=380)
 Button(root, text="Update",command = update,height=2, width= 13,fg="blue",font=(None, 10, 'bold')).place(x=410, y=380)
 Button(root, text="Delete",command = delete,height=2, width= 13,fg="red",font=(None, 10, 'bold')).place(x=570, y=380)
 
 cols = ('ID', 'Name', 'Start Date','No of Travellers''No of Trip Legs', 'Contact', 'Trip Cordinator','No of Support Staffs','Trip Mode')
-listBox = ttk.Treeview(root, columns=cols, show='headings')
+listBox = ttk.Treeview(root, columns=cols, show='headings' )
 
 for col in cols:
     listBox.heading(col, text=col)
     listBox.grid(row=1, column=0, columnspan=2)
-    listBox.place(x=10, y=430)
+    listBox.place(x=10, y=440)
 
 show()
 listBox.bind('<Double-Button-1>',GetValue)

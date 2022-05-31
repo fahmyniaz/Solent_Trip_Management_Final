@@ -69,7 +69,7 @@ def Add():
             {"id": json.dumps(id), "startlocation": json.dumps(startlocation),
              "destination": json.dumps(destination), "transportprovider": json.dumps(transportprovider), "transportmode": json.dumps(transportmode)
              , "pointofinterest": json.dumps(pointofinterest), "transferpoint": json.dumps(transferpoint)})
-    messagebox.showinfo("information", "Trip Leg details saved successfully...")
+    messagebox.showinfo("information", "Trip Leg Details Saved Successfully...")
     e1.delete(0, END)
     e2.delete(0, END)
     e3.delete(0, END)
@@ -85,7 +85,7 @@ def update():
     startlocation = e2.get()
     destination = e3.get()
     transportprovider = e4.get()
-    transportmode = e4.get()
+    transportmode = e5.get()
     pointofinterest = e6.get()
     transferpoint = e7.get()
 
@@ -96,7 +96,7 @@ def update():
                                 , "pointofinterest": json.dumps(pointofinterest),
                              "transferpoint": json.dumps(transferpoint)})
 
-    messagebox.showinfo("information", "Trip Leg details Updated successfully...")
+    messagebox.showinfo("information", "Trip Leg details Updated Successfully...")
     e1.delete(0, END)
     e2.delete(0, END)
     e3.delete(0, END)
@@ -109,7 +109,7 @@ def update():
 def delete():
     empId = e1.get()
     delete_one_item_from_json(0)
-    messagebox.showinfo("information", "Trip Leg Details Deleted successfully...")
+    messagebox.showinfo("information", "Trip Leg Details Deleted Successfully...")
 
     e1.delete(0, END)
     e2.delete(0, END)

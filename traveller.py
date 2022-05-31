@@ -184,6 +184,8 @@ e7.place(x=395, y=290)
 e8 = Entry(root, width=30)
 e8.place(x=395, y=320)
 
+
+
 Button(root, text="Add",command = Add,height=3, width= 13,fg="green",font=(None, 10, 'bold')).place(x=220, y=360)
 Button(root, text="update",command = update,height=3, width= 13,fg="blue",font=(None, 10, 'bold')).place(x=380, y=360)
 Button(root, text="Delete",command = delete,height=3, width= 13,fg="red",font=(None, 10, 'bold')).place(x=540, y=360)

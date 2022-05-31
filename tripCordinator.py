@@ -59,7 +59,7 @@ def Add():
     create_one_item_in_json(
             {"id": json.dumps(id), "name": json.dumps(name),
              "nic": json.dumps(nic), "contact": json.dumps(contact)})
-    messagebox.showinfo("information", "Trip Cordinator details saved successfully...")
+    messagebox.showinfo("information", "Trip Cordinator details Saved Successfully...")
     e1.delete(0, END)
     e2.delete(0, END)
     e3.delete(0, END)
@@ -77,7 +77,7 @@ def update():
                             {"id": json.dumps(id), "name": json.dumps(name),
                              "nic": json.dumps(nic), "contact": json.dumps(contact)})
 
-    messagebox.showinfo("information", "Trip Cordinator details Updated successfully...")
+    messagebox.showinfo("information", "Trip Cordinator details Updated Successfully...")
     e1.delete(0, END)
     e2.delete(0, END)
     e3.delete(0, END)
@@ -87,7 +87,7 @@ def update():
 def delete():
     empId = e1.get()
     delete_one_item_from_json(0)
-    messagebox.showinfo("information", "Trip Cordinator Details Deleted successfully...")
+    messagebox.showinfo("information", "Trip Cordinator Details Deleted Successfully...")
 
     e1.delete(0, END)
     e2.delete(0, END)
