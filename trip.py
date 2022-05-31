@@ -157,12 +157,12 @@ global e8
 global e9
 
 
-tk.Label(root, text="Welcome to", fg="#2c5c2b",bg="#fbe47c",  font=(None, 24)).place(x=340, y=15)
-tk.Label(root, text="Trip Management", fg="#2c5c2b",bg="#fbe47c",  font=(None, 30)).place(x=270, y=55)
+tk.Label(root, text="Welcome to", fg="#2c5c2b",bg="#fbe47c",  font=(None, 24)).place(x=370, y=15)
+tk.Label(root, text="Trip Management", fg="#2c5c2b",bg="#fbe47c",  font=(None, 30)).place(x=300, y=55)
 
 tk.Label(root, text="ID",bg="#fbe47c",  font=(None, 10, 'bold')).place(x=270, y=110)
 Label(root, text="Name",bg="#fbe47c",  font=(None, 10, 'bold')).place(x=270, y=140)
-Label(root, text="Start Date",bg="#fbe47c",  font=(None, 10, 'bold')).place(x=270, y=170)
+Label(root, text="Start Date (DD/MM/YYYY)",bg="#fbe47c",  font=(None, 10, 'bold')).place(x=270, y=170)
 Label(root, text="No of Travellers",bg="#fbe47c",  font=(None, 10, 'bold')).place(x=270, y=200)
 Label(root, text="No of Trip Legs",bg="#fbe47c",  font=(None, 10, 'bold')).place(x=270, y=230)
 Label(root, text="Contact",bg="#fbe47c",  font=(None, 10, 'bold')).place(x=270, y=260)
@@ -173,35 +173,35 @@ Label(root, text="Trip Mode",bg="#fbe47c",  font=(None, 10, 'bold')).place(x=270
 Label(root, text="Please close this window to open the next window, Thank you...",fg="red",bg="#fbe47c",  font=(None, 10, 'bold')).place(x=240, y=660)
 
 e1 = Entry(root, width=30)
-e1.place(x=395, y=110)
+e1.place(x=435, y=110)
 
 e2 = Entry(root, width=30)
-e2.place(x=395, y=140)
+e2.place(x=435, y=140)
 
 e3 = Entry(root, width=30)
-e3.place(x=395, y=170)
+e3.place(x=435, y=170)
 
 e4 = Entry(root, width=30)
-e4.place(x=395, y=200)
+e4.place(x=435, y=200)
 
 e5 = Entry(root, width=30)
-e5.place(x=395, y=230)
+e5.place(x=435, y=230)
 
 e6 = Entry(root, width=30)
-e6.place(x=395, y=260)
+e6.place(x=435, y=260)
 
 e7 = Entry(root, width=30)
-e7.place(x=395, y=290)
+e7.place(x=435, y=290)
 
 e8 = Entry(root, width=30)
-e8.place(x=395, y=320)
+e8.place(x=435, y=320)
 
 e9 = Entry(root, width=30)
-e9.place(x=395, y=350)
+e9.place(x=435, y=350)
 
-Button(root, text="Add",command = Add,height=2, width= 13).place(x=220, y=380)
-Button(root, text="Update",command = update,height=2, width= 13).place(x=380, y=380)
-Button(root, text="Delete",command = delete,height=2, width= 13).place(x=540, y=380)
+Button(root, text="Add",command = Add,height=2, width= 13,fg="green",font=(None, 10, 'bold')).place(x=250, y=380)
+Button(root, text="Update",command = update,height=2, width= 13,fg="blue",font=(None, 10, 'bold')).place(x=410, y=380)
+Button(root, text="Delete",command = delete,height=2, width= 13,fg="red",font=(None, 10, 'bold')).place(x=570, y=380)
 
 cols = ('ID', 'Name', 'Start Date','No of Travellers''No of Trip Legs', 'Contact', 'Trip Cordinator','No of Support Staffs','Trip Mode')
 listBox = ttk.Treeview(root, columns=cols, show='headings' )

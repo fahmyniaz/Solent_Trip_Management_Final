@@ -174,9 +174,9 @@ e6.place(x=395, y=260)
 e7 = Entry(root, width=30)
 e7.place(x=395, y=290)
 
-Button(root, text="Add",command = Add,height=3, width= 13).place(x=210, y=330)
-Button(root, text="Update",command = update,height=3, width= 13).place(x=380, y=330)
-Button(root, text="Delete",command = delete,height=3, width= 13).place(x=540, y=330)
+Button(root, text="Add",command = Add,height=3, width= 13,fg="green",font=(None, 10, 'bold')).place(x=210, y=330)
+Button(root, text="Update",command = update,height=3, width= 13,fg="blue",font=(None, 10, 'bold')).place(x=380, y=330)
+Button(root, text="Delete",command = delete,height=3, width= 13,fg="red",font=(None, 10, 'bold')).place(x=540, y=330)
 
 cols = ('id', 'startlocation', 'destination','transportprovider','transportmode')
 listBox = ttk.Treeview(root, columns=cols, show='headings' )

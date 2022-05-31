@@ -134,9 +134,9 @@ e3.place(x=395, y=170)
 e4 = Entry(root, width=30)
 e4.place(x=395, y=200)
 
-Button(root, text="Add",command = Add,height=3, width= 13).place(x=210, y=250)
-Button(root, text="Update",command = update,height=3, width= 13).place(x=380, y=250)
-Button(root, text="Delete",command = delete,height=3, width= 13).place(x=540, y=250)
+Button(root, text="Add",command = Add,height=3, width= 13,fg="green",font=(None, 10, 'bold')).place(x=210, y=250)
+Button(root, text="Update",command = update,height=3, width= 13,fg="blue",font=(None, 10, 'bold')).place(x=380, y=250)
+Button(root, text="Delete",command = delete,height=3, width= 13,fg="red",font=(None, 10, 'bold')).place(x=540, y=250)
 
 cols = ('id', 'name', 'nic','contact')
 listBox = ttk.Treeview(root, columns=cols, show='headings' )
