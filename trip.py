@@ -204,7 +204,7 @@ Button(root, text="Update",command = update,height=2, width= 13,fg="blue",font=(
 Button(root, text="Delete",command = delete,height=2, width= 13,fg="red",font=(None, 10, 'bold')).place(x=570, y=380)
 
 cols = ('ID', 'Name', 'Start Date','No of Travellers''No of Trip Legs', 'Contact', 'Trip Cordinator','No of Support Staffs','Trip Mode')
-listBox = ttk.Treeview(root, columns=cols, show='headings' )
+listBox = ttk.Treeview(root, columns=cols, show='headings')
 
 for col in cols:
     listBox.heading(col, text=col)
